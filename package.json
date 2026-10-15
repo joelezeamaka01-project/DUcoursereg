@@ -1,0 +1,21 @@
+{
+  "name": "du-400-level-project",
+  "version": "1.0.0",
+  "description": "Dominion University student portal with Supabase and Netlify",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "netlify dev",
+    "build": "echo 'Build complete'"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.38.0",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.0",
+    "pg": "^8.13.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}

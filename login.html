@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dominion University | Portal Login</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="no_back.png" />
+    <script src="app.js" defer></script>
+    <script src="supabase-client-frontend.js" defer></script>
+  </head>
+  <body class="login-page">
+    <div class="portal-wrapper">
+      <div class="login-layout">
+        <section class="promo-panel">
+          <div class="promo-content">
+            <h1>
+              Your<br />
+              Course<br />
+              Starts Here
+            </h1>
+
+            <div class="promo-info">
+              <p>
+                Register your courses, manage your semester timetable, and stay on top
+                of your academic progress at Dominion University.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="login-panel">
+          <div class="login-header">
+            <h2>Portal Login</h2>
+            <div class="top-links">
+              <a href="faq.html" class="faq-link">FAQs</a>
+            </div>
+          </div>
+
+          <div class="login-box">
+            <div class="mini-logo-wrap">
+              <img src="sharp.png" alt="Dominion University logo" class="mini-logo-img" />
+            </div>
+
+            <form class="login-form" id="loginForm">
+              <label>
+                <span>Your Matric Number:</span>
+                <input type="text" name="matricNumber" id="matricNumber" placeholder="Enter your matric number" required />
+              </label>
+
+              <label>
+                <span>Your Password:</span>
+                <div class="password-input-wrapper">
+                  <input type="password" name="password" id="password" placeholder="Enter your account password" required />
+                  <button type="button" class="password-toggle" id="passwordToggle" aria-label="Show password">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="eye-icon eye-open">
+                      <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                      <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                    </svg>
+                  </button>
+                </div>
+              </label>
+
+              <div class="login-actions">
+                <button type="submit" id="loginBtn">Log in</button>
+              </div>
+            </form>
+
+            <div class="forgot-password">
+              <a href="forgot-password.html">Forgot Password? Click here!</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="faq-modal hidden" id="faqModal" aria-hidden="true">
+      <div class="faq-modal-content">
+        <div class="faq-modal-header">
+          <h3>Frequently Asked Questions</h3>
+          <button type="button" class="faq-close" aria-label="Close FAQ">×</button>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <h4>How do I log in?</h4>
+            <p>Enter your matric number and password in the form, then click the Log in button.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>What if I forgot my password?</h4>
+            <p>Click “Forgot Password? Click here!” and enter your registered email to receive a 6-digit code.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Where do I get my details?</h4>
+            <p>Your matric number and password are provided by the student admin or registration office.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>What can I do after logging in?</h4>
+            <p>You can view your dashboard, check registration details, review courses, and access your student information.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

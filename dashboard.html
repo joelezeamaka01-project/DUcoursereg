@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dominion University | Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="no_back.png" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar dashboard-topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">DU</div>
+          <div>
+            <p class="mini-label">Student Portal</p>
+            <h1>Dominion University</h1>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <span class="user-pill">Student: Sarah Mensah</span>
+          <a href="login.html" class="logout-btn">Logout</a>
+        </div>
+      </header>
+
+      <main class="portal-grid">
+        <aside class="sidebar card">
+          <h3>Navigation</h3>
+          <nav class="side-nav">
+            <a class="active" href="#">Dashboard</a>
+            <a href="#">My Courses</a>
+            <a href="#">Registration</a>
+            <a href="#">Results</a>
+            <a href="#">Profile</a>
+          </nav>
+        </aside>
+
+        <section class="form-panel card main-content">
+          <div class="section-heading">
+            <p class="eyebrow">Academic Enrollment</p>
+            <h2>Course Registration Form</h2>
+          </div>
+
+          <form class="registration-form">
+            <div class="two-col">
+              <label>
+                <span>Full Name</span>
+                <input type="text" value="Sarah Mensah" />
+              </label>
+
+              <label>
+                <span>Student ID</span>
+                <input type="text" value="DU-2024-0187" />
+              </label>
+            </div>
+
+            <div class="two-col">
+              <label>
+                <span>Program</span>
+                <select>
+                  <option>BSc Computer Science</option>
+                  <option>BSc Business Administration</option>
+                  <option>BSc Accounting</option>
+                  <option>BA English</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Level</span>
+                <select>
+                  <option>200 Level</option>
+                  <option>100 Level</option>
+                  <option>300 Level</option>
+                  <option>400 Level</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="two-col">
+              <label>
+                <span>Semester</span>
+                <select>
+                  <option>First Semester</option>
+                  <option>Second Semester</option>
+                  <option>Summer</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Academic Year</span>
+                <select>
+                  <option>2026/2027</option>
+                  <option>2025/2026</option>
+                  <option>2024/2025</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="course-list">
+              <h3>Selected Courses</h3>
+
+              <div class="course-item">
+                <div>
+                  <strong>CSC 201</strong>
+                  <span>Data Structures</span>
+                </div>
+                <span>3 Credits</span>
+              </div>
+
+              <div class="course-item">
+                <div>
+                  <strong>ENG 210</strong>
+                  <span>Academic Writing</span>
+                </div>
+                <span>2 Credits</span>
+              </div>
+
+              <div class="course-item">
+                <div>
+                  <strong>MTH 220</strong>
+                  <span>Discrete Mathematics</span>
+                </div>
+                <span>3 Credits</span>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="secondary-btn">Add Course</button>
+              <button type="submit" class="primary-btn">Submit Registration</button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

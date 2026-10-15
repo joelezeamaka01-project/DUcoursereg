@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dominion University | Student Portal</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="no_back.png" />
+    <script src="app.js" defer></script>
+    <script src="supabase-client-frontend.js" defer></script>
+  </head>
+  <body class="dashboard-body">
+    <div class="dashboard-shell">
+      <aside class="sidebar-panel card">
+        <div class="sidebar-brand">
+          <div class="brand-mark"></div>
+          <div>
+            <p class="mini-label">Student Portal</p>
+            <h3>Dominion</h3>
+          </div>
+        </div>
+
+        <div class="profile-box">
+          <div class="avatar">SM</div>
+          <div>
+            <strong id="studentName">Student Name</strong>
+            <span id="studentProgram">Program</span>
+          </div>
+        </div>
+
+        <nav class="side-nav">
+          <a class="active" href="#">Dashboard</a>
+          <a href="#">My Courses</a>
+          <a href="#">Registration</a>
+          <a href="#">Results</a>
+          <a href="#">Payments</a>
+          <a href="#">Profile</a>
+        </nav>
+
+        <button class="sidebar-cta" id="helpButton" type="button">Need Help?</button>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar dashboard-topbar">
+          <div>
+            <p class="mini-label">Academic Dashboard</p>
+            <h1>Course Registration</h1>
+          </div>
+
+          <div class="topbar-actions">
+            <span class="user-pill">2026/2027 Session</span>
+            <nav class="desktop-nav" aria-label="Main menu">
+              <a href="#">Dashboard</a>
+              <a href="#">Courses</a>
+              <a href="#">Results</a>
+              <a href="#">Profile</a>
+            </nav>
+            <button class="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <button class="logout-btn" onclick="logoutStudent()" type="button">Logout</button>
+          </div>
+        </header>
+
+        <section class="stats-row">
+          <div class="stat-card card">
+            <span>Registered Courses</span>
+            <strong>0</strong>
+            <small>Current semester</small>
+          </div>
+
+          <div class="stat-card card">
+            <span>Total Credits</span>
+            <strong>0</strong>
+            <small>Minimum required</small>
+          </div>
+
+          <div class="stat-card card highlight">
+            <span>CGPA</span>
+            <strong>0.00</strong>
+            <small>Not available</small>
+          </div>
+
+          <div class="stat-card card">
+            <span>Registration Fee</span>
+            <strong>#0</strong>
+            <small>Pending</small>
+          </div>
+        </section>
+
+        <section class="content-grid">
+          <div class="registration-card card">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Academic Enrollment</p>
+                <h2>Register Courses</h2>
+              </div>
+              <button class="small-btn">Add Course</button>
+            </div>
+
+            <form id="studentRegistrationForm" class="registration-form">
+              <div class="two-col">
+                <label>
+                  <span>Full Name</span>
+                  <input type="text" name="fullName" value="Sarah Mensah" />
+                </label>
+
+                <label>
+                  <span>Matric Number</span>
+                  <input type="text" name="matricNumber" value="DU/2024/0187" />
+                </label>
+              </div>
+
+              <div class="two-col">
+                <label>
+                  <span>Email</span>
+                  <input type="email" name="email" value="sarah.mensah@du.edu.ng" />
+                </label>
+
+                <label>
+                  <span>Program</span>
+                  <select name="program">
+                    <option>BSc Computer Science</option>
+                    <option>BSc Business Administration</option>
+                    <option>BSc Accounting</option>
+                    <option>BA English</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="two-col">
+                <label>
+                  <span>Level</span>
+                  <select name="level">
+                    <option>200 Level</option>
+                    <option>100 Level</option>
+                    <option>300 Level</option>
+                    <option>400 Level</option>
+                  </select>
+                </label>
+
+                <label>
+                  <span>Semester</span>
+                  <select name="semester">
+                    <option>First Semester</option>
+                    <option>Second Semester</option>
+                    <option>Summer</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="two-col">
+                <label>
+                  <span>Academic Year</span>
+                  <select name="academicYear">
+                    <option>2026/2027</option>
+                    <option>2025/2026</option>
+                    <option>2024/2025</option>
+                  </select>
+                </label>
+
+                <label>
+                  <span>Password</span>
+                  <input type="password" name="password" placeholder="Set password for student login" />
+                </label>
+              </div>
+
+              <div class="form-actions">
+                <button type="reset" class="secondary-btn">Clear</button>
+                <button type="submit" class="primary-btn">Submit Registration</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="course-card card">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Available Courses</p>
+                <h2>Semester Plan</h2>
+              </div>
+            </div>
+
+            <div class="course-list">
+              <div class="course-item">
+                <div>
+                  <strong>CSC 201</strong>
+                  <span>Data Structures</span>
+                </div>
+                <span>3 Credits</span>
+              </div>
+
+              <div class="course-item">
+                <div>
+                  <strong>ENG 210</strong>
+                  <span>Academic Writing</span>
+                </div>
+                <span>2 Credits</span>
+              </div>
+
+              <div class="course-item">
+                <div>
+                  <strong>MTH 220</strong>
+                  <span>Discrete Mathematics</span>
+                </div>
+                <span>3 Credits</span>
+              </div>
+
+              <div class="course-item">
+                <div>
+                  <strong>GNS 202</strong>
+                  <span>Use of Library</span>
+                </div>
+                <span>1 Credit</span>
+              </div>
+
+              <div class="course-item">
+                <div>
+                  <strong>PHY 203</strong>
+                  <span>Physics Practical</span>
+                </div>
+                <span>2 Credits</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <div class="mobile-menu-panel" id="mobileMenuPanel" aria-hidden="true">
+        <div class="mobile-menu-header">
+          <div class="brand-mark">DU</div>
+          <button class="close-menu" aria-label="Close menu">×</button>
+        </div>
+
+        <nav class="mobile-nav" aria-label="Mobile menu">
+          <a href="#">Dashboard</a>
+          <a href="#">My Courses</a>
+          <a href="#">Registration</a>
+          <a href="#">Results</a>
+          <a href="#">Payments</a>
+          <a href="#">Profile</a>
+          <a href="#">Support Center</a>
+          <a href="login.html">Logout</a>
+        </nav>
+      </div>
+
+      <div class="help-modal hidden" id="helpModal" aria-hidden="true">
+        <div class="help-modal-content">
+          <div class="help-modal-header">
+            <h3>How to use this portal</h3>
+            <button type="button" class="help-close" aria-label="Close help">×</button>
+          </div>
+
+          <ol class="help-list">
+            <li>Log in with your matric number and password.</li>
+            <li>View your academic dashboard and current session updates.</li>
+            <li>Click on the menu items to access courses, registration, results, and profile details.</li>
+            <li>Use the registration form to enter your academic information.</li>
+            <li>Check your course list and total credits for the semester.</li>
+            <li>If you forget your password, use the reset option on the login page.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
